@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+.profile{
+  
+  margin: 120px  auto 0px;
+  width: 620px;
+  &_p{
+    position:absolute ;
+    display: inline-block;
+    cursor: pointer;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 24px;
+    color: #0A3465;
+    padding: 17px;
+    top: 1%;
+    left: 2%;
+  }
+  
+}
+.container{
+  
+ &_name{
+    cursor: pointer;
+    width: 400px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 58px;
+    line-height: 52px;
+    color: rgb(0, 88, 217);
+    margin: 0px;
+ }
+ &_data{
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 52px;  
+    color: #202020;
+    >strong{
+      font-family: Inter;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 52px;
+    }
+ }
+ &_content{
+   
+   display: flex;
+   >p{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1D1D1D;
+    padding: 6px 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    &:active, &:hover{
+      box-shadow: 1px 1px 3px 0px rgba(34, 60, 80, 0.2);
+
+      background: rgba(216, 195, 3, 0.4);
+    }
+   }
+   &_active_hover{
+    background: rgba(64, 210, 105, 0.08); 
+    color: #36B55A;
+    box-shadow: 1px 1px 3px 0px rgba(34, 60, 80, 0.2);
+
+   }
+ }
+ hr{
+   opacity: 0.3;
+   color: #898C90;
+ }
+  .content{
+    border: 1px solid  #F9F9F9;
+    border-top: transparent;
+    border-left:transparent ;
+    align-items: center;
+    padding: 10px 20px 20px 20px;
+    
+    display: flex;
+    justify-content: space-between;
+    &:hover{
+      -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+    &_photo{
+      width: 165px;
+      height: 165px;
+      border-radius: 15px;
+      cursor: pointer;
+      
+    }
+    >div{
+      
+      &_photo{
+        width: 165px;
+        height: 165px;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+  &_div{
+     
+    margin-right: 40px;
+    &_h2{
+      cursor: pointer;
+     
+      max-width: 560px;
+      // max-width: 350px;
+      font-family: Nunito;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      margin-bottom: 0px;
+      color: #080B0E;
+    }
+    &_p{
+      margin-top: 5px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 23px;
+      color: #898C90;
+    }
+    
+
+    &_sub{
+      display: flex;
+      align-items: center;
+      
+      &_p{
+        margin: 2px;
+        font-family: IBM Plex Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        
+        color: #C1C1C1;
+      }
+      &_div{
+        align-items: center;
+        display: flex;
+        margin-left: 21px;
+        &_span{
+          display: block;
+          margin-left: 5px;
+          font-family: IBM Plex Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+         
+          letter-spacing: 0.01em;
+          text-transform: uppercase;
+          color: #C1C1C1;
+
+        }
+      }
+    }
+  }
+}
+
+//icon
+.icon_color_trash{
+  font-size: 1.3em;
+  color: rgb(65, 63, 63);
+  padding: 5px 15px;
+  margin-left: 20px;
+  &:hover{
+    color: red;
+  }
+  
+}
+.icon_color_black{
+  font-size: 1.1em;
+  color: rgb(94, 94, 94);
+}
+.container_Link{
+  text-decoration: none;
+}
+.Pan_To_Square{
+  display: block;
+  color: rgb(94, 94, 94);
+  font-size: 1.4em;
+  margin-left: 4px;
+  &:hover{
+    color: red;
+  }
+  
+}

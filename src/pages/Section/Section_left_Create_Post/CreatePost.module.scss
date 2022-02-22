@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+.container{
+  width: 720px;
+  padding: 0px 80px 10px 68px;
+
+  
+
+  &_content{
+    p{margin-bottom: 7px;}
+
+
+
+
+  
+
+    &_form{
+      display: flex;
+      flex-direction: column;
+      &_input_1{
+        border: initial;
+        outline: none;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 42px;
+        line-height: 52px;
+        color: #a1a1a1;
+        
+        &::placeholder{
+          color: #D7D7D7;
+        }
+      }
+
+
+
+
+
+      &_div_description{
+        display: flex;
+        flex-direction: column;
+        >p{
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #0A3465;
+        }
+        >textarea{
+          resize: none;
+          height: 90px;
+          background: #FFFFFF;
+          border: 1px solid #ECEEF1;
+          box-sizing: border-box;
+          border-radius: 10px;
+          font-size: 20px;
+          padding: 5px 15px;
+        }
+      }
+
+
+
+
+
+
+
+      &_div_img{
+        display: flex;
+        flex-direction: column;
+        >p{
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #0A3465;
+        }
+
+
+        &_form{
+          text-align: center;
+          display: flex; 
+          justify-content: space-between;
+          >input{
+            display: block;
+            width: 430px;
+            background: #FFFFFF;
+            border: 1px solid #ECEEF1;
+            box-sizing: border-box;
+            border-radius: 8px;
+            font-size: 20px;
+            padding: 5px 15px;
+          }
+          >button{
+         
+        
+            padding: 5px 10px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            background: #6FCF97;
+            border-radius: 11px;
+            color: #FFFFFF;
+            border: initial;
+           
+          }
+        }
+      }
+
+
+
+
+
+      &_footer{
+        >p{
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #0A3465;
+        }
+        &_div{
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 15px;
+          display: flex;
+         
+          justify-content: space-between;
+          &_btn1{
+            line-height: 19px;
+            width: 100px;
+            padding: 8px 5px;
+            margin-right: 2px;
+            margin-top: 2px;  
+            border-radius: 10px;
+            border: initial;
+            background-color: #F3F3F3;
+            color: #68572D;
+          }
+          &_btn2{
+            line-height: 19px;
+            width: 140px;
+            padding: 8px 5px;
+            background: #FFDF36;
+            margin-right: 2px;
+            margin-top: 2px;
+            border-radius: 10px;
+            border: initial;
+           
+          }
+        }
+
+       
+       
+      }
+      
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//icon 
+.icon{
+  font-size: 18px;
+  margin: 0px 6px 0px 0px;
+
+
+
+
+
+
+
+
+
+
+
+
+flex-direction: column;
+
+
+
+
+
+
+
+
+
+
+
+
+}

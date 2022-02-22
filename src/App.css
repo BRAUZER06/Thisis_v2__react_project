@@ -1,0 +1,15 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+.App{
+  display: flex;
+}
+.wrapper{
+  width: 1340px;
+  margin:  0 auto;
+}
+.header{
+  display: flex;
+  justify-content: flex-end;
+}
