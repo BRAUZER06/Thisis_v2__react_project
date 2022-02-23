@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import AutoRegis from "./pages/AuthorizationRegistration//AutoRegis.jsx";
-import Header from "./pages/Header/Header";
-import Nav from "./pages/Nav/Nav";
+import AutoRegis from "./pages/AuthorizationRegistration/AuthorizationRegistration.jsx";
+import Header from "./components/Header/Header";
+import Nav from "./components/Nav/Nav";
 import Section from "./pages/Section/Section";
 // import {instance} from './config/axios'
 
@@ -39,7 +39,6 @@ const navigate = useNavigate()
             <AutoRegis />
           </div>
         </div>
-
         <Routes>
           <Route path="/profile" element={<Profile />} />
         </Routes>

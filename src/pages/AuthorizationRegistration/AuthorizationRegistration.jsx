@@ -6,7 +6,7 @@ import { reg_AutoValueInput } from "../../redux/auto_regis/action";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { close_MenuAutoReg } from "../../redux/modal/action";
-const AutoRegis = () => {
+const AuthorizationRegistration = () => {
   const usedispatch = useDispatch();
   const navigate = useNavigate();
   const chengeToggleMenu = useSelector(
@@ -89,4 +89,4 @@ const AutoRegis = () => {
   );
 };
 
-export default AutoRegis;
+export default AuthorizationRegistration;

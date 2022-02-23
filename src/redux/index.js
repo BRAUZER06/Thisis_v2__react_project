@@ -5,14 +5,13 @@ import { modalReducer } from "./modal/reducer";
 import { avtoRegRefucer } from "./auto_regis/reducer";
 import { sidebarReducer } from "./sidebar/reducer";
 import { headerReducer } from "./header/reducer";
-import { commentReducer } from "./comment/reducer";
 
 const rootReducer = combineReducers({
   modal: modalReducer,
   avtoReg: avtoRegRefucer,
   sideBar: sidebarReducer,
   header: headerReducer,
-  comment: commentReducer,
+ 
 });
 
 const store = createStore(

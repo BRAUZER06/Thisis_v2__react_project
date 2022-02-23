@@ -27,7 +27,7 @@ import {
 } from "../../redux/header/action";
 import { Link } from "react-router-dom";
 
-import s from "./header.module.scss";
+import s from "./Header.module.scss";
 
 const Header = () => {
   const dispatch = useDispatch();

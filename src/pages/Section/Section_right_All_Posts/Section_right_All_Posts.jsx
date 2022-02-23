@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import s from "./SectionRight.module.scss";
+import s from "./Section_right_All_Posts.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import Comment from "../../Comment/Comment";
+import PostComment from "../Section_left_Post_Comment/Section_left_Post_Comment.jsx";
 import { useParams, Link } from "react-router-dom";
 
 const SectionRight = () => {

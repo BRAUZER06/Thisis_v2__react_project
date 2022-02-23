@@ -1,10 +1,10 @@
 import React from "react";
-import Section_left_Create_Post from "./Section_left_Create_Post/CreatePost";
-import SectionLeft from "./Section_left/SectionLeft";
-import SectionRight from "./Section_right/SectionRight";
+import Section_left_Create_Post from "./Section_left_Create_Post/Section_left_Create_Post";
+import SectionLeft from "./Section_left_MyInformation/Section_left_MyInformation";
+import SectionRight from "./Section_right_All_Posts/Section_right_All_Posts";
 import { Routes, Route } from "react-router-dom";
-import Comment from "../Comment/Comment";
-import RedactPost from "../Redact_post/RedactPost";
+import Comment from "./Section_left_Post_Comment/Section_left_Post_Comment.jsx";
+import RedactPost from "../RedactPost/RedactPost";
 const Section = () => {
   return (
     <section style={{ display: "flex" }}>

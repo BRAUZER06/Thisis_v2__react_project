@@ -1,12 +1,12 @@
 import React from "react";
-import s from "./Comment.module.scss";
+import s from "./Section_left_Post_Comment.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-const Comment = () => {
+const PostComment = () => {
   const { id } = useParams();
   const [textareaValue, setTextAreatValue] = React.useState("");
   const [getCommentAllAxios, setGetCommentAllAxios] = React.useState([]);
@@ -128,4 +128,4 @@ const Comment = () => {
   );
 };
 
-export default Comment;
+export default PostComment;

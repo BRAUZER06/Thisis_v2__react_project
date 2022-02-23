@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./CreatePost.module.scss";
+import s from "./Section_left_Create_Post.module.scss";
 import { SimpleMdeReact } from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

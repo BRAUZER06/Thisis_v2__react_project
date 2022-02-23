@@ -19,7 +19,7 @@ const Profile = () => {
   const [downloadComments, setDownloadComments] = React.useState([]);
   const [filterStatPostslCommens, setFilterStatPostsCommens] =
     React.useState(true);
-
+  //сделать компонент из постов и комментов
   // сделать одну функцию
   const filterInputValuePost = downloadPosts.filter((value) => {
     return value.title.toLowerCase().includes(inputValue.toLowerCase());
@@ -28,8 +28,6 @@ const Profile = () => {
     return value.text.toLowerCase().includes(inputValue.toLowerCase());
   });
 
-
-  
   useEffect(() => {
     try {
       (async () => {
@@ -51,40 +49,39 @@ const Profile = () => {
     }
   }, []);
 
-
-
-
   const removeMyPostClickBtn = async (e) => {
     try {
-      (await axios.delete(`http://localhost:5656/posts/${e}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }),
-      window.location.reload())();
+      (
+        await axios.delete(`http://localhost:5656/posts/${e}`, {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        })
+      )();
     } catch (error) {
-      alert("Не удалось получить пост");
+      alert("Не удалось удалить пост");
+    } finally {
+      window.location.reload();
     }
   };
-
-
-
 
   const removeMyCommentClickBtn = async (e) => {
+    //Исправить ошибку:  перекидывает в catch  даже если не было выявлено ощибок в try, также перезагрузка стр при удалении комма и пеебрасывание в категорию статьи а не коммы где ты и изначально находился
+
     try {
-      (await axios.delete(`http://localhost:5656/comments/${e}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }),
-      window.location.reload())();
+      (
+        await axios.delete(`http://localhost:5656/comments/${e}`, {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        })
+      )();
     } catch (error) {
-      alert("не удалось получить комментарий ");
+      alert("не удалось удалить комментарий ");
+    } finally {
+      window.location.reload();
     }
   };
-
-
-
 
   const onClickToggleCommentPost = (e) => {
     if (e.target.innerText === "Комментарии") {
@@ -93,7 +90,6 @@ const Profile = () => {
       setFilterStatPostsCommens(true);
     }
   };
-
 
   return (
     <div className={s.profile}>
