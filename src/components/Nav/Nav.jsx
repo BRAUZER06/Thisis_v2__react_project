@@ -8,7 +8,7 @@ import {
   faXmark,
   faCaretDown,
   faHouse,
-  faGear,
+  faGear, 
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import {

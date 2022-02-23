@@ -48,7 +48,7 @@ const AuthorizationRegistration = () => {
           .post("http://localhost:5656/auth/login", {
             email: email,
             password: password,
-          })
+          }) 
           .then((respons) => {
             
             window.localStorage.setItem("token", respons.data.token);

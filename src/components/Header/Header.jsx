@@ -5,7 +5,7 @@ import {
   faMagnifyingGlass,
   faArrowRightToBracket,
   faUser,
-  faXmark,
+  faXmark, 
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
 

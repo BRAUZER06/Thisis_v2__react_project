@@ -25,7 +25,7 @@ const SectionRight = () => {
         .then((respos) => setDownloadPosts(respos.data.items));
     };
     res();
-  }, []);
+  }, []); 
 
   
 

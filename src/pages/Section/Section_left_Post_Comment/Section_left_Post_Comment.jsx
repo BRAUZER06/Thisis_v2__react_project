@@ -19,7 +19,7 @@ const PostComment = () => {
         .then((resposn) => setGetPostChecked(resposn.data));
     } catch (error) {
       alert("Не удалось получить пост");
-    }
+    } 
   }, [id]);
 
   useEffect(async () => {

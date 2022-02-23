@@ -68,7 +68,7 @@ const Auto = ({ regAutoValueInput, regAutoFormGet }) => {
             <div className={s.error}>
               {errors?.email && <p>{errors?.email?.message || "Error!"}</p>}
             </div>
-
+ 
             <label>
               <p>Пароль:</p>
               <input

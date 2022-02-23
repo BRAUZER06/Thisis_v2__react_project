@@ -18,7 +18,7 @@ const RedactPost = () => {
 
 
 
-
+ 
 
   const inputValueOnChangeGet = (e, name) => {
     // SimpleMdeReact передает value только через событие 'e'(в этой функции), из-за этого такой фильтр.

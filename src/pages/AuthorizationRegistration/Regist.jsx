@@ -21,7 +21,7 @@ const Regist = ({ regAutoValueInput, regAutoFormGet }) => {
   const onClickToggleMenuAutoReg = () => {
     dispatch(onClick_ToggleMenuAutoReg());
   };
-
+ 
   //React-Hook-Form
   const {
     register,
