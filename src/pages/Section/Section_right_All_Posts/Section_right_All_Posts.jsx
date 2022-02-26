@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import s from "./Section_right_All_Posts.module.scss";
-
+import classNames from 'classnames'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEye,
@@ -56,7 +56,7 @@ const SectionRight = () => {
           >
             <div
             
-              className={s.content}
+            className={classNames(s.content, { [s.content_active] : window.location.pathname === `/check_post_and_comment/${e._id}`})} 
               key={e._id}
             >
               <div className={s.container_div}>

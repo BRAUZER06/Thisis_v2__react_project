@@ -215,7 +215,16 @@
       height: 45px;
       border-radius: 12px;
       background-color:#FFDF36 ;
-
+      &:hover{
+        background-color:rgb(226, 197, 49) ;
+       
+        -webkit-box-shadow: 2px 3px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 2px 3px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 2px 3px 8px 0px rgba(34, 60, 80, 0.2);
+      }
+      &:active{
+        background-color:rgb(229, 255, 113);  
+      }
     }
   }
 }

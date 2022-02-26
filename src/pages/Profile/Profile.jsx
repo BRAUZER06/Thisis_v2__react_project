@@ -19,7 +19,7 @@ const Profile = () => {
   const [downloadComments, setDownloadComments] = React.useState([]);
   const [filterStatPostslCommens, setFilterStatPostsCommens] =
     React.useState(true);
-  //сделать компонент из постов и комментов
+  //сделать отделные  компоненты из постов и комментов
   // сделать одну функцию
   const filterInputValuePost = downloadPosts.filter((value) => {
     return value.title.toLowerCase().includes(inputValue.toLowerCase());
