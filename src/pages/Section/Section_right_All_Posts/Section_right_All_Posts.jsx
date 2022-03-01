@@ -1,15 +1,18 @@
 import React from "react";
-import s from "./Section_right_All_Posts.module.scss";
-import classNames from "classnames";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faEye ,faTrashCan, faPenToSquare,} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import classNames from "classnames";
 import { useSelector } from "react-redux";
-import PostComment from "../Section_left_Post_Comment/Section_left_Post_Comment.jsx";
 import { useParams, Link } from "react-router-dom";
 import Paginations from "./Paginations/Paginations";
+import s from "./Section_right_All_Posts.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faEye ,faTrashCan, faPenToSquare,} from "@fortawesome/free-solid-svg-icons";
+
+
+
 
 const SectionRight = () => {
+  
   const { id } = useParams();
   const [downloadPostSkeleton, setDownloadPostSkeleton] = React.useState(false);
   const [downloadPosts, setDownloadPosts] = React.useState([]);
@@ -24,7 +27,6 @@ const SectionRight = () => {
     setPaginatePages(Number(e));
   };
 
-  console.log(id);
 
   React.useEffect(() => {
     const res = async () => {
