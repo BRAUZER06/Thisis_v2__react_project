@@ -1,6 +1,6 @@
 import React from "react";
-import s from "./Section_left_MyInformation.module.scss";
 import photo from '../../../img/Pupkin_photo.png'
+import s from "./Section_left_MyInformation.module.scss";
 
 const SectionLeft = () => {
   return (

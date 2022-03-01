@@ -1,13 +1,15 @@
 import React from "react";
 import s from "./AutoRegis.module.scss";
 import { useForm } from "react-hook-form";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Switch from "@mui/material/Switch";
 import { useDispatch } from "react-redux";
 import { close_MenuAutoReg } from "../../redux/modal/action";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { onClick_ToggleMenuAutoReg } from "../../redux/modal/action";
+import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
+
+
+
 
 const Auto = ({ regAutoValueInput, regAutoFormGet }) => {
   const label = { inputProps: { "aria-label": "Switch demo" } };
@@ -17,10 +19,13 @@ const Auto = ({ regAutoValueInput, regAutoFormGet }) => {
   const closeMenuAutoReg = () => {
     dispatch(close_MenuAutoReg());
   };
+  
   //переключатель с Авториз на Регист
   const onClickToggleMenuAutoReg = () => {
     dispatch(onClick_ToggleMenuAutoReg());
   };
+
+
 
   //React-Hook-Form
   const {
@@ -34,6 +39,13 @@ const Auto = ({ regAutoValueInput, regAutoFormGet }) => {
   const onSubmit = (data) => {
     reset();
   };
+
+
+
+
+
+
+
   return (
     <div className={s.container}>
       <div className={s.content}>

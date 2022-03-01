@@ -1,62 +1,48 @@
 import React from "react";
+import s from "./Header.module.scss";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMagnifyingGlass,
-  faArrowRightToBracket,
-  faUser,
-  faXmark, 
-  faPenToSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import {value_InputHeader, toggle_InputCheckHeader,} from "../../redux/header/action";
+import {onClick_ToggleMenuAutoReg, close_MenuAutoReg,} from "../../redux/modal/action";
+import {createRecord_MenuNav, exiteProfile_MenuNav, home_MenuNav, toggle_MenuNav,} from "../../redux/sidebar/action";
+import {faMagnifyingGlass, faArrowRightToBracket, faUser, faXmark, faPenToSquare,} from "@fortawesome/free-solid-svg-icons";
 
-import {
-  onClick_ToggleMenuAutoReg,
-  close_MenuAutoReg,
-} from "../../redux/modal/action";
 
-import {
-  createRecord_MenuNav,
-  exiteProfile_MenuNav,
-  home_MenuNav,
-  toggle_MenuNav,
-} from "../../redux/sidebar/action";
-
-import {
-  value_InputHeader,
-  toggle_InputCheckHeader,
-} from "../../redux/header/action";
-import { Link } from "react-router-dom";
-
-import s from "./Header.module.scss";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const toggleSearch = useSelector((state) => state.header.toggleSearch);
   const inputValue = useSelector((state) => state.header.inputValue);
+  const toggleSearch = useSelector((state) => state.header.toggleSearch);
   const openHomeMenu = useSelector((state) => state.sideBar.openHomeMenu);
 
 
-  const onClickToggleMenuAutoReg = () => {
-    dispatch(onClick_ToggleMenuAutoReg());
+
+  const homeMenuNav = () => {
+    dispatch(home_MenuNav());
   };
   const closeMenuAutoReg = () => {
     dispatch(close_MenuAutoReg());
+  };
+  const createRecordMenuNav = () => {
+    dispatch(createRecord_MenuNav());
   };
   const exiteProfileMenuNav = () => {
     dispatch(exiteProfile_MenuNav());
     dispatch(toggle_MenuNav());
     localStorage.clear();
   };
-  const createRecordMenuNav = () => {
-    dispatch(createRecord_MenuNav());
-  };
   const toggleInputCheckHeader = () => {
     dispatch(toggle_InputCheckHeader());
-    dispatch(value_InputHeader(''))
+    dispatch(value_InputHeader(""));
   };
-  const homeMenuNav = () => {
-    dispatch(home_MenuNav());
+  const onClickToggleMenuAutoReg = () => {
+    dispatch(onClick_ToggleMenuAutoReg());
   };
+ 
+ 
+ 
+ 
   // непонятки с тем что эта функция не может следить за переменно toggleSearch, она не видит его значения
   const valueInputHeader = (e) => {
     if (toggleSearch === true) {
@@ -106,7 +92,7 @@ const Header = () => {
 
               {window.localStorage.getItem("userId") ? (
                 <>
-                <Link className={s.Link} to="/create_post">
+                  <Link className={s.Link} to="/create_post">
                     <div
                       onClick={createRecordMenuNav}
                       style={{ marginRight: "10px" }}
@@ -126,9 +112,7 @@ const Header = () => {
                       <span className={s.tooltiptext}> Выйти</span>
                     </div>
                   </Link>
-                  
-                  </>
-                
+                </>
               ) : (
                 <Link className={s.Link} to="/">
                   <div

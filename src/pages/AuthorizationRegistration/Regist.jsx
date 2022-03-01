@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import s from "./AutoRegis.module.scss";
 import { useForm } from "react-hook-form";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Switch from "@mui/material/Switch";
 import { useDispatch } from "react-redux";
 import { close_MenuAutoReg } from "../../redux/modal/action";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { onClick_ToggleMenuAutoReg } from "../../redux/modal/action";
-import { Link } from "react-router-dom";
+import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
+
 
 const Regist = ({ regAutoValueInput, regAutoFormGet }) => {
   const label = { inputProps: { "aria-label": "Switch demo" } };

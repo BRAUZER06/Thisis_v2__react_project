@@ -1,30 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
-import AutoRegis from "./pages/AuthorizationRegistration/AuthorizationRegistration.jsx";
-import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
+import Profile from "./pages/Profile/Profile";
 import Section from "./pages/Section/Section";
+import Header from "./components/Header/Header";
+import {Routes,Route,useNavigate,} from "react-router-dom";
+import AutoRegis from "./pages/AuthorizationRegistration/AuthorizationRegistration.jsx";
 // import {instance} from './config/axios'
 
-import {
-  Routes,
-  Route,
-  Redirect,
-  Link,
-  useNavigate,
-  exast,
-} from "react-router-dom";
-import Profile from "./pages/Profile/Profile";
-
-import { useDispatch } from "react-redux";
 
 
 function App() {
-const navigate = useNavigate()
-
-
-
-
   return (
     <div className="App">
       <div className="wrapper">

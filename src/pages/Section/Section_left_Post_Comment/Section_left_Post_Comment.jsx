@@ -1,12 +1,18 @@
 import React from "react";
-import s from "./Section_left_Post_Comment.module.scss";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import s from "./Section_left_Post_Comment.module.scss";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+
+
+
+
 const PostComment = () => {
+
+
   const { id } = useParams();
   const [textareaValue, setTextAreatValue] = React.useState("");
   const [getCommentAllAxios, setGetCommentAllAxios] = React.useState([]);
@@ -16,11 +22,7 @@ const PostComment = () => {
 
 
 
-
-
-
-
-  useEffect(async () => {
+  React.useEffect(async () => {
     try {
       const resp = await axios
         .get("http://localhost:5656/comments")
@@ -35,7 +37,7 @@ const PostComment = () => {
 
 
   
-  useEffect(async () => {
+  React.useEffect(async () => {
     try {
       const resp = await axios
         .get(`http://localhost:5656/posts/${id}`)
@@ -43,8 +45,7 @@ const PostComment = () => {
     } catch (error) {
       alert("Не удалось получить пост");
     }
-    await noImg();
-    console.log("мы в блоке с id");
+     noImg();
   }, [id]);
 
 

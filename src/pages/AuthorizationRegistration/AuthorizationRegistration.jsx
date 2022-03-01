@@ -1,26 +1,37 @@
 import React from "react";
-import Regist from "./Regist.jsx";
-import Auto from "./Auto.jsx";
-import { useDispatch, useSelector } from "react-redux";
-import { reg_AutoValueInput } from "../../redux/auto_regis/action";
 import axios from "axios";
+import Auto from "./Auto.jsx";
+import Regist from "./Regist.jsx";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { close_MenuAutoReg } from "../../redux/modal/action";
+import { reg_AutoValueInput } from "../../redux/auto_regis/action";
+
+
+
+
 const AuthorizationRegistration = () => {
-  const usedispatch = useDispatch();
+
   const navigate = useNavigate();
-  const chengeToggleMenu = useSelector(
-    (state) => state.modal.flagonChangeTrigger
-  );
   const dispatch = useDispatch();
+  const usedispatch = useDispatch();
   const { fullName, email, password } = useSelector((state) => state.avtoReg);
+  const chengeToggleMenu = useSelector((state) => state.modal.flagonChangeTrigger);
+
+
+
+  //Отлавливаем текст в инпутах
+  const regAutoValueInput = (e) => {
+    const {value,name} = e.target
+    dispatch(reg_AutoValueInput(value, name));
+  };
+
+
 
   const regAutoFormGet = async (e) => {
     if (e.target.name === "registration") {
       console.log("мы в блоке с регистарцией");
-
-      // сделать проверку, есть логин занят то выводить свооотсветвующубю ошибку
-      try {
+      try {                                        // сделать проверку, есть логин занят то выводить свооотсветвующубю ошибку
         const resp = await axios
           .post("http://localhost:5656/auth/register", {
             fullName: fullName,
@@ -28,20 +39,19 @@ const AuthorizationRegistration = () => {
             password: password,
           })
           .then((respons) => {
-          
-            window.localStorage.setItem("token", respons.data.token);
             window.localStorage.setItem("userId", respons.data._id);
+            window.localStorage.setItem("token", respons.data.token);
             window.localStorage.setItem("fullName", respons.data.fullName);
             window.localStorage.setItem("createdAt", respons.data.createdAt);
           });
         navigate("/profile");
         usedispatch(close_MenuAutoReg());
         alert(`Добро пожаловать ${window.localStorage.getItem("fullName")}`);
-      } catch (error) {
-        //сделать еще одну проверку 
+      } catch (error) {                            //сделать еще одну проверку 
         alert("Вы ввели некорректные данные для регистрации");
       }
-    } else if (e.target.name === "authorization") {
+    }
+     else if (e.target.name === "authorization") {
       console.log("мы в блоке с авторизацией");
       try {
         const resp = await axios
@@ -50,9 +60,8 @@ const AuthorizationRegistration = () => {
             password: password,
           }) 
           .then((respons) => {
-            
-            window.localStorage.setItem("token", respons.data.token);
             window.localStorage.setItem("userId", respons.data._id);
+            window.localStorage.setItem("token", respons.data.token);
             window.localStorage.setItem("fullName", respons.data.fullName);
             //при авториацзии не получает дату
           });
@@ -65,10 +74,7 @@ const AuthorizationRegistration = () => {
     }
   };
 
-  //Отлавливаем текст в инпутах
-  const regAutoValueInput = (e) => {
-    dispatch(reg_AutoValueInput(e.target.value, e.target.name));
-  };
+
 
   return (
     <div>

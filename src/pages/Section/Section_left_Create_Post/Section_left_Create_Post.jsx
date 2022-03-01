@@ -1,10 +1,11 @@
 import React from "react";
+import axios from "axios";
+import "easymde/dist/easymde.min.css";
 import s from "./Section_left_Create_Post.module.scss";
 import { SimpleMdeReact } from "react-simplemde-editor";
-import "easymde/dist/easymde.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
+
 
 const Section_left_Create_Post = () => {
   const [valueInput, setInputValue] = React.useState({
@@ -16,6 +17,7 @@ const Section_left_Create_Post = () => {
 
 
  
+
 
   const clickFormButton = async (e) => {
     try {
@@ -40,6 +42,7 @@ const Section_left_Create_Post = () => {
 
     setInputValue({ title: "", description: "", photoUrl: "", text: "" });
     e.preventDefault();
+    
   };
 
 

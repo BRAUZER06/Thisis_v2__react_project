@@ -1,12 +1,16 @@
 import React from "react";
+import axios from "axios";
+import "easymde/dist/easymde.min.css";
 import s from "./RedactPost.module.scss";
 import { SimpleMdeReact } from "react-simplemde-editor";
-import "easymde/dist/easymde.min.css";
-import axios from "axios";
-import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+
+
 const RedactPost = () => {
+
+
+  
   const { id } = useParams();
   const navigation = useNavigate();
   const [valueInput, setInputValue] = React.useState({
@@ -33,7 +37,7 @@ const RedactPost = () => {
 
 
 
-  useEffect(async () => {
+  React.useEffect(async () => {
     try {
       const res = await axios
         .get(`http://localhost:5656/posts/${id}`)

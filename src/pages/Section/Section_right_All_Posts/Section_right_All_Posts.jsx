@@ -1,12 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import s from "./Section_right_All_Posts.module.scss";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEye,
-  faTrashCan,
-  faPenToSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import {faEye ,faTrashCan, faPenToSquare,} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import PostComment from "../Section_left_Post_Comment/Section_left_Post_Comment.jsx";
@@ -23,7 +19,13 @@ const SectionRight = () => {
   const [paginatePages, setPaginatePages] = React.useState(1);
   const inputValue = useSelector((state) => state.header.inputValue);
 
-  useEffect(() => {
+
+  const paginate = (e) => {
+    setPaginatePages(Number(e));
+  };
+
+
+  React.useEffect(() => {
     const res = async () => {
       const res = await axios
         .get(`http://localhost:5656/posts?page=${paginatePages}`)
@@ -35,13 +37,14 @@ const SectionRight = () => {
     res();
   }, [paginatePages, inputValue]);
 
-  const paginate = (e) => {
-    setPaginatePages(Number(e));
-  };
+
 
   const filterInputValue = downloadPosts.filter((value) => {
     return value.title.toLowerCase().includes(inputValue.toLowerCase());
   });
+
+
+
 
   const removeMyPostClickBtn = async (e) => {
     window.location.reload();
@@ -52,6 +55,10 @@ const SectionRight = () => {
     });
     res();
   };
+
+
+
+
 
   return (
     <div>

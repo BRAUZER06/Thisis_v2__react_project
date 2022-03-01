@@ -1,24 +1,21 @@
 import React from "react";
-import s from "./Profilse.module.scss";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEye,
-  faTrashCan,
-  faPenToSquare,
-} from "@fortawesome/free-solid-svg-icons";
-
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import axios from "axios";
+import s from "./Profilse.module.scss";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faEye, faTrashCan, faPenToSquare,} from "@fortawesome/free-solid-svg-icons";
+
+
 
 const Profile = () => {
   const inputValue = useSelector((state) => state.header.inputValue);
   const [downloadPosts, setDownloadPosts] = React.useState([]);
   const [downloadComments, setDownloadComments] = React.useState([]);
-  const [filterStatPostslCommens, setFilterStatPostsCommens] =
-    React.useState(true);
+  const [filterStatPostslCommens, setFilterStatPostsCommens] = React.useState(true);
+
+
+
   //сделать отделные  компоненты из постов и комментов
   // сделать одну функцию
   const filterInputValuePost = downloadPosts.filter((value) => {
@@ -28,7 +25,10 @@ const Profile = () => {
     return value.text.toLowerCase().includes(inputValue.toLowerCase());
   });
 
-  useEffect(() => {
+
+  React.useEffect(() => {
+
+
     try {
       (async () => {
         await axios
@@ -38,6 +38,10 @@ const Profile = () => {
     } catch (error) {
       alert("не удалось получить посты ");
     }
+
+
+
+
     try {
       (async () => {
         await axios
@@ -47,7 +51,11 @@ const Profile = () => {
     } catch (error) {
       alert("не удалось получить комментарии");
     }
+
   }, []);
+
+
+
 
   const removeMyPostClickBtn = async (e) => {
     window.location.reload();
@@ -57,9 +65,9 @@ const Profile = () => {
       },
     });
     res();
-
-  
   };
+
+
 
   const removeMyCommentClickBtn = async (e) => {
     window.location.reload();
@@ -80,6 +88,12 @@ const Profile = () => {
     }
   };
 
+
+
+
+
+
+  
   return (
     <div className={s.profile}>
       <Link className={s.Link} to="/home">
