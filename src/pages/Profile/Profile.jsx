@@ -27,12 +27,12 @@ const Profile = () => {
   const filterInputValueComment = downloadComments.filter((value) => {
     return value.text.toLowerCase().includes(inputValue.toLowerCase());
   });
- 
+
   useEffect(() => {
     try {
       (async () => {
         await axios
-          .get("http://localhost:5656/posts")
+          .get(`http://localhost:5656/posts?userId=${window.localStorage.getItem("userId")}`)
           .then((respos) => setDownloadPosts(respos.data.items));
       })();
     } catch (error) {
@@ -41,7 +41,7 @@ const Profile = () => {
     try {
       (async () => {
         await axios
-          .get("http://localhost:5656/comments")
+          .get(`http://localhost:5656/comments`)
           .then((respos) => setDownloadComments(respos.data.items));
       })();
     } catch (error) {
@@ -50,37 +50,26 @@ const Profile = () => {
   }, []);
 
   const removeMyPostClickBtn = async (e) => {
-    try {
-      (
-        await axios.delete(`http://localhost:5656/posts/${e}`, {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-          },
-        })
-      )();
-    } catch (error) {
-      alert("Не удалось удалить пост");
-    } finally {
-      window.location.reload();
-    }
+    window.location.reload();
+    const res = await axios.delete(`http://localhost:5656/posts/${e}`, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    });
+    res();
+
+  
   };
 
   const removeMyCommentClickBtn = async (e) => {
-    //Исправить ошибку:  перекидывает в catch  даже если не было выявлено ощибок в try, также перезагрузка стр при удалении комма и пеебрасывание в категорию статьи а не коммы где ты и изначально находился
-
-    try {
-      (
-        await axios.delete(`http://localhost:5656/comments/${e}`, {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-          },
-        })
-      )();
-    } catch (error) {
-      alert("не удалось удалить комментарий ");
-    } finally {
-      window.location.reload();
-    }
+    window.location.reload();
+    const res = await axios.delete(`http://localhost:5656/comments/${e}`, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    });
+    res();
+   
   };
 
   const onClickToggleCommentPost = (e) => {

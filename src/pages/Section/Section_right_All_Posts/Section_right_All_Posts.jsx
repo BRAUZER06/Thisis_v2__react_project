@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import s from "./Section_right_All_Posts.module.scss";
-import classNames from 'classnames'
+import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEye,
@@ -11,23 +11,33 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import PostComment from "../Section_left_Post_Comment/Section_left_Post_Comment.jsx";
 import { useParams, Link } from "react-router-dom";
+import Paginations from "./Paginations/Paginations";
 
 const SectionRight = () => {
   const { id } = useParams();
-  const [downloadPostSkeleton, setDownloadPostSkeleton] = React.useState(false)
+  const [downloadPostSkeleton, setDownloadPostSkeleton] = React.useState(false);
   const [downloadPosts, setDownloadPosts] = React.useState([]);
+  const [downloadPostsAllNumbers, setDownloadPostsAllNumbers] = React.useState(
+    []
+  );
+  const [paginatePages, setPaginatePages] = React.useState(1);
   const inputValue = useSelector((state) => state.header.inputValue);
 
   useEffect(() => {
     const res = async () => {
-      await axios
-        .get("http://localhost:5656/posts")
-        .then((respos) => setDownloadPosts(respos.data.items));
+      const res = await axios
+        .get(`http://localhost:5656/posts?page=${paginatePages}`)
+        .then((respos) => {
+          setDownloadPosts(respos.data.items);
+          setDownloadPostsAllNumbers(respos.data.total);
+        });
     };
     res();
-  }, []); 
+  }, [paginatePages, inputValue]);
 
-  
+  const paginate = (e) => {
+    setPaginatePages(Number(e));
+  };
 
   const filterInputValue = downloadPosts.filter((value) => {
     return value.title.toLowerCase().includes(inputValue.toLowerCase());
@@ -35,14 +45,12 @@ const SectionRight = () => {
 
   const removeMyPostClickBtn = async (e) => {
     window.location.reload();
-
-    (
-      await axios.delete(`http://localhost:5656/posts/${e}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      })
-    )();
+    const res = await axios.delete(`http://localhost:5656/posts/${e}`, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    });
+    res();
   };
 
   return (
@@ -55,8 +63,11 @@ const SectionRight = () => {
             key={e._id}
           >
             <div
-            
-            className={classNames(s.content, { [s.content_active] : window.location.pathname === `/check_post_and_comment/${e._id}`})} 
+              className={classNames(s.content, {
+                [s.content]:
+                  window.location.pathname ===
+                  `/check_post_and_comment/${e._id}`,
+              })}
               key={e._id}
             >
               <div className={s.container_div}>
@@ -115,8 +126,12 @@ const SectionRight = () => {
             </div>
           </Link>
         ))}
-
-        
+        <div className={s.container_pagination}>
+          <Paginations
+            paginate={paginate}
+            totalPosts={downloadPostsAllNumbers}
+          />
+        </div>
       </div>
     </div>
   );

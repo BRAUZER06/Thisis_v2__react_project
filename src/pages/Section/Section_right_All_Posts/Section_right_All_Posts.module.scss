@@ -3,6 +3,7 @@
 
 
 .container{
+ 
   width: 620px;
   box-sizing: border-box;
   &_Link{
@@ -98,6 +99,10 @@
           
         }
       }
+    }
+    &_pagination{
+      display: flex;
+      justify-content: center;
     }
 }
 

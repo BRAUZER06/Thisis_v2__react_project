@@ -11,7 +11,30 @@ const PostComment = () => {
   const [textareaValue, setTextAreatValue] = React.useState("");
   const [getCommentAllAxios, setGetCommentAllAxios] = React.useState([]);
   const [getPostChecked, setGetPostChecked] = React.useState({});
+  const [noImges, setNoImages] = React.useState(false);
 
+
+
+
+
+
+
+
+  useEffect(async () => {
+    try {
+      const resp = await axios
+        .get("http://localhost:5656/comments")
+        .then((respons) => {
+          setGetCommentAllAxios(respons.data.items);
+        });
+    } catch (error) {
+      alert("Не удалось получить комментарий");
+    }
+  }, []);
+
+
+
+  
   useEffect(async () => {
     try {
       const resp = await axios
@@ -19,21 +42,13 @@ const PostComment = () => {
         .then((resposn) => setGetPostChecked(resposn.data));
     } catch (error) {
       alert("Не удалось получить пост");
-    } 
+    }
+    await noImg();
+    console.log("мы в блоке с id");
   }, [id]);
 
-  useEffect(async () => {
-    try {
-      const resp = await axios
-      .get("http://localhost:5656/comments")
-      .then((respons) => {
-        setGetCommentAllAxios(respons.data.items);
-      });
-    } catch (error) {
-      alert('Не удалось получить комментарий')
-    }
-    
-  }, []);
+
+
 
   const onClickButtonInputForm = async () => {
     window.location.reload();
@@ -51,15 +66,43 @@ const PostComment = () => {
     );
   };
 
+
+
+
+
+
+  const noImg = () => {
+    if (getPostChecked.photoUrl.indexOf("http") === 0) {
+      setNoImages(false);
+    } else {
+      setNoImages(true);
+    }
+  };
+
+
+
+
   const onChangeValueInput = (e) => {
     setTextAreatValue(e.target.value);
   };
 
 
+
+
+
+  console.log(noImges);
   return (
     <div className={s.container}>
       <div className={s.container_photo}>
-        <img src={getPostChecked.photoUrl} alt="Фотки нэт" />
+        <img
+          onClick={(e) => console.log(e)}
+          src={
+            noImges
+              ? "https://brilliant24.ru/files/cat/template_01.png"
+              : getPostChecked.photoUrl
+          }
+          alt="Фотки нэт"
+        />
       </div>
       <div className={s.container_up}>
         <div className={s.container_up_div_1}>
@@ -84,9 +127,7 @@ const PostComment = () => {
 
       <div className={s.container_down}>
         <p className={s.container_down_text_1}>{getPostChecked.text}</p>
-
       </div>
-
       <div className={s.container_comment}>
         <h2>
           Комментарии (
