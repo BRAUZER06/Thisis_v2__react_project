@@ -24,10 +24,11 @@ const SectionRight = () => {
     setPaginatePages(Number(e));
   };
 
+  console.log(id);
 
   React.useEffect(() => {
     const res = async () => {
-      const res = await axios
+      const resp = await axios
         .get(`http://localhost:5656/posts?page=${paginatePages}`)
         .then((respos) => {
           setDownloadPosts(respos.data.items);
@@ -70,11 +71,7 @@ const SectionRight = () => {
             key={e._id}
           >
             <div
-              className={classNames(s.content, {
-                [s.content]:
-                  window.location.pathname ===
-                  `/check_post_and_comment/${e._id}`,
-              })}
+              className={classNames(s.content, { [s.content_active]: window.location.pathname === `/check_post_and_comment/${e._id}` })}
               key={e._id}
             >
               <div className={s.container_div}>

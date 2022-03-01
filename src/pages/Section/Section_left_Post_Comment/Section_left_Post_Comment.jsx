@@ -91,7 +91,6 @@ const PostComment = () => {
 
 
 
-  console.log(noImges);
   return (
     <div className={s.container}>
       <div className={s.container_photo}>
