@@ -56,7 +56,7 @@ const Nav = () => {
       className={s.container}
     >
       {
-        // Переделать под массив
+        // Переделать под компоненты
         openSideBar ? (
           <div className={s.content}>
             <div
