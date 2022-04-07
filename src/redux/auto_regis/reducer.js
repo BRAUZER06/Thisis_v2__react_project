@@ -4,9 +4,6 @@ const initState = {
   email: "",
 };
 
-
-
-
 export function avtoRegRefucer(state = initState, action) {
   switch (action.type) {
     case "REG_AUTO_VALUE_INPUT":
