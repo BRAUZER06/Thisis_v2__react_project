@@ -1,5 +1,5 @@
 import React from "react";
-import photo from '../../../img/Pupkin_photo.png'
+import photo from "../../../img/Pupkin_photo.png";
 import s from "./Section_left_MyInformation.module.scss";
 
 const SectionLeft = () => {
@@ -14,7 +14,7 @@ const SectionLeft = () => {
           <div className={s.container_block_photo}>
             <img src={photo} />
           </div>
-           <div className={s.container_block_about_me}>
+          <div className={s.container_block_about_me}>
             <h2>Обо мне</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean

@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { onClick_ToggleMenuAutoReg } from "../../redux/modal/action";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-
 const Regist = ({ regAutoValueInput, regAutoFormGet }) => {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   const dispatch = useDispatch();
@@ -22,7 +21,7 @@ const Regist = ({ regAutoValueInput, regAutoFormGet }) => {
   const onClickToggleMenuAutoReg = () => {
     dispatch(onClick_ToggleMenuAutoReg());
   };
- 
+
   //React-Hook-Form
   const {
     register,

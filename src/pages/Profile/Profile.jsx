@@ -4,17 +4,18 @@ import s from "./Profilse.module.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faEye, faTrashCan, faPenToSquare,} from "@fortawesome/free-solid-svg-icons";
-
-
+import {
+  faEye,
+  faTrashCan,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Profile = () => {
   const inputValue = useSelector((state) => state.header.inputValue);
   const [downloadPosts, setDownloadPosts] = React.useState([]);
   const [downloadComments, setDownloadComments] = React.useState([]);
-  const [filterStatPostslCommens, setFilterStatPostsCommens] = React.useState(true);
-
-
+  const [filterStatPostslCommens, setFilterStatPostsCommens] =
+    React.useState(true);
 
   //сделать отделные  компоненты из постов и комментов
   // сделать одну функцию
@@ -25,22 +26,20 @@ const Profile = () => {
     return value.text.toLowerCase().includes(inputValue.toLowerCase());
   });
 
-
   React.useEffect(() => {
-
-
     try {
       (async () => {
         await axios
-          .get(`http://localhost:5656/posts?userId=${window.localStorage.getItem("userId")}`)
+          .get(
+            `http://localhost:5656/posts?userId=${window.localStorage.getItem(
+              "userId"
+            )}`
+          )
           .then((respos) => setDownloadPosts(respos.data.items));
       })();
     } catch (error) {
       alert("не удалось получить посты ");
     }
-
-
-
 
     try {
       (async () => {
@@ -51,11 +50,7 @@ const Profile = () => {
     } catch (error) {
       alert("не удалось получить комментарии");
     }
-
   }, []);
-
-
-
 
   const removeMyPostClickBtn = async (e) => {
     window.location.reload();
@@ -67,8 +62,6 @@ const Profile = () => {
     res();
   };
 
-
-
   const removeMyCommentClickBtn = async (e) => {
     window.location.reload();
     const res = await axios.delete(`http://localhost:5656/comments/${e}`, {
@@ -77,7 +70,6 @@ const Profile = () => {
       },
     });
     res();
-   
   };
 
   const onClickToggleCommentPost = (e) => {
@@ -88,12 +80,6 @@ const Profile = () => {
     }
   };
 
-
-
-
-
-
-  
   return (
     <div className={s.profile}>
       <Link className={s.Link} to="/home">

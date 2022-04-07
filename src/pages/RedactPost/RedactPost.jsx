@@ -5,24 +5,13 @@ import s from "./RedactPost.module.scss";
 import { SimpleMdeReact } from "react-simplemde-editor";
 import { useNavigate, useParams } from "react-router-dom";
 
-
-
 const RedactPost = () => {
-
-
-  
   const { id } = useParams();
   const navigation = useNavigate();
   const [valueInput, setInputValue] = React.useState({
     title: "",
     text: "",
   });
-
-
-
-
-
- 
 
   const inputValueOnChangeGet = (e, name) => {
     // SimpleMdeReact передает value только через событие 'e'(в этой функции), из-за этого такой фильтр.
@@ -33,10 +22,6 @@ const RedactPost = () => {
     }
   };
 
-
-
-
-
   React.useEffect(async () => {
     try {
       const res = await axios
@@ -46,10 +31,6 @@ const RedactPost = () => {
       alert("Ошибка при получении данных ");
     }
   }, []);
-
-
-
-
 
   const clickPostDeleted = async (e) => {
     e.preventDefault();
@@ -67,10 +48,6 @@ const RedactPost = () => {
       alert("Проблемы с удалением");
     }
   };
-
-
-
-
 
   const clickFormButton = async (e) => {
     e.preventDefault();
@@ -95,15 +72,6 @@ const RedactPost = () => {
     }
   };
 
-
-
-
-
-
-
-
-
-  
   return (
     <div className={s.wrapper}>
       <div className={s.container}>

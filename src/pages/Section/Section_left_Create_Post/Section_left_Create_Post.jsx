@@ -6,7 +6,6 @@ import { SimpleMdeReact } from "react-simplemde-editor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 
-
 const Section_left_Create_Post = () => {
   const [valueInput, setInputValue] = React.useState({
     title: "",
@@ -14,10 +13,6 @@ const Section_left_Create_Post = () => {
     photoUrl: "",
     text: "",
   });
-
-
- 
-
 
   const clickFormButton = async (e) => {
     try {
@@ -39,14 +34,9 @@ const Section_left_Create_Post = () => {
       alert("Не удалось отправить данные");
     }
 
-
     setInputValue({ title: "", description: "", photoUrl: "", text: "" });
     e.preventDefault();
-    
   };
-
-
-
 
   const inputValueGet = (e, name) => {
     // SimpleMdeReact передает value только через событие 'e'(в этой функции), из-за этого такой фильтр.
@@ -57,9 +47,6 @@ const Section_left_Create_Post = () => {
     }
   };
 
-
-
-  
   return (
     <div className={s.container}>
       <div className={s.container_content}>

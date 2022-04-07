@@ -3,8 +3,21 @@ import s from "./Nav.module.scss";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faXmark, faCaretDown, faHouse,faGear,} from "@fortawesome/free-solid-svg-icons";
-import {toggle_MenuNav, home_MenuNav, myProfile_MenuNav, createRecord_MenuNav, exiteProfile_MenuNav, closed_MenuNav,} from "../../redux/sidebar/action";
+import {
+  faUser,
+  faXmark,
+  faCaretDown,
+  faHouse,
+  faGear,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  toggle_MenuNav,
+  home_MenuNav,
+  myProfile_MenuNav,
+  createRecord_MenuNav,
+  exiteProfile_MenuNav,
+  closed_MenuNav,
+} from "../../redux/sidebar/action";
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -19,7 +32,6 @@ const Nav = () => {
 
   const fullName = window.localStorage.getItem("fullName");
   const createdAt = window.localStorage.getItem("createdAt");
-
 
   const homeMenuNav = () => {
     dispatch(home_MenuNav());
@@ -41,13 +53,6 @@ const Nav = () => {
     dispatch(exiteProfile_MenuNav());
     localStorage.clear();
   };
- 
-
-
-
-
-
-
 
   return (
     <div

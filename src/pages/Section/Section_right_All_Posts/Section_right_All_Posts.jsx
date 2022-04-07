@@ -6,13 +6,13 @@ import { useParams, Link } from "react-router-dom";
 import Paginations from "./Paginations/Paginations";
 import s from "./Section_right_All_Posts.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faEye ,faTrashCan, faPenToSquare,} from "@fortawesome/free-solid-svg-icons";
-
-
-
+import {
+  faEye,
+  faTrashCan,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 const SectionRight = () => {
-  
   const { id } = useParams();
   const [downloadPostSkeleton, setDownloadPostSkeleton] = React.useState(false);
   const [downloadPosts, setDownloadPosts] = React.useState([]);
@@ -22,11 +22,9 @@ const SectionRight = () => {
   const [paginatePages, setPaginatePages] = React.useState(1);
   const inputValue = useSelector((state) => state.header.inputValue);
 
-
   const paginate = (e) => {
     setPaginatePages(Number(e));
   };
-
 
   React.useEffect(() => {
     const res = async () => {
@@ -40,14 +38,9 @@ const SectionRight = () => {
     res();
   }, [paginatePages, inputValue]);
 
-
-
   const filterInputValue = downloadPosts.filter((value) => {
     return value.title.toLowerCase().includes(inputValue.toLowerCase());
   });
-
-
-
 
   const removeMyPostClickBtn = async (e) => {
     window.location.reload();
@@ -59,10 +52,6 @@ const SectionRight = () => {
     res();
   };
 
-
-
-
-
   return (
     <div>
       <div className={s.container}>
@@ -73,7 +62,11 @@ const SectionRight = () => {
             key={e._id}
           >
             <div
-              className={classNames(s.content, { [s.content_active]: window.location.pathname === `/check_post_and_comment/${e._id}` })}
+              className={classNames(s.content, {
+                [s.content_active]:
+                  window.location.pathname ===
+                  `/check_post_and_comment/${e._id}`,
+              })}
               key={e._id}
             >
               <div className={s.container_div}>

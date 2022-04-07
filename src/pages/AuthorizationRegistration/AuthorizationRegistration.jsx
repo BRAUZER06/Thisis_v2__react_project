@@ -7,31 +7,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { close_MenuAutoReg } from "../../redux/modal/action";
 import { reg_AutoValueInput } from "../../redux/auto_regis/action";
 
-
-
-
 const AuthorizationRegistration = () => {
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const usedispatch = useDispatch();
   const { fullName, email, password } = useSelector((state) => state.avtoReg);
-  const chengeToggleMenu = useSelector((state) => state.modal.flagonChangeTrigger);
-
-
+  const chengeToggleMenu = useSelector(
+    (state) => state.modal.flagonChangeTrigger
+  );
 
   //Отлавливаем текст в инпутах
   const regAutoValueInput = (e) => {
-    const {value,name} = e.target
+    const { value, name } = e.target;
     dispatch(reg_AutoValueInput(value, name));
   };
-
-
 
   const regAutoFormGet = async (e) => {
     if (e.target.name === "registration") {
       console.log("мы в блоке с регистарцией");
-      try {                                        // сделать проверку, есть логин занят то выводить свооотсветвующубю ошибку
+      try {
+        // сделать проверку, есть логин занят то выводить свооотсветвующубю ошибку
         const resp = await axios
           .post("http://localhost:5656/auth/register", {
             fullName: fullName,
@@ -47,18 +42,18 @@ const AuthorizationRegistration = () => {
         navigate("/profile");
         usedispatch(close_MenuAutoReg());
         alert(`Добро пожаловать ${window.localStorage.getItem("fullName")}`);
-      } catch (error) {                            //сделать еще одну проверку 
+      } catch (error) {
+        //сделать еще одну проверку
         alert("Вы ввели некорректные данные для регистрации");
       }
-    }
-     else if (e.target.name === "authorization") {
+    } else if (e.target.name === "authorization") {
       console.log("мы в блоке с авторизацией");
       try {
         const resp = await axios
           .post("http://localhost:5656/auth/login", {
             email: email,
             password: password,
-          }) 
+          })
           .then((respons) => {
             window.localStorage.setItem("userId", respons.data._id);
             window.localStorage.setItem("token", respons.data.token);
@@ -73,8 +68,6 @@ const AuthorizationRegistration = () => {
       }
     }
   };
-
-
 
   return (
     <div>

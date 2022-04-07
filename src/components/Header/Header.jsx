@@ -3,20 +3,33 @@ import s from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {value_InputHeader, toggle_InputCheckHeader,} from "../../redux/header/action";
-import {onClick_ToggleMenuAutoReg, close_MenuAutoReg,} from "../../redux/modal/action";
-import {createRecord_MenuNav, exiteProfile_MenuNav, home_MenuNav, toggle_MenuNav,} from "../../redux/sidebar/action";
-import {faMagnifyingGlass, faArrowRightToBracket, faUser, faXmark, faPenToSquare,} from "@fortawesome/free-solid-svg-icons";
-
-
+import {
+  value_InputHeader,
+  toggle_InputCheckHeader,
+} from "../../redux/header/action";
+import {
+  onClick_ToggleMenuAutoReg,
+  close_MenuAutoReg,
+} from "../../redux/modal/action";
+import {
+  createRecord_MenuNav,
+  exiteProfile_MenuNav,
+  home_MenuNav,
+  toggle_MenuNav,
+} from "../../redux/sidebar/action";
+import {
+  faMagnifyingGlass,
+  faArrowRightToBracket,
+  faUser,
+  faXmark,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const dispatch = useDispatch();
   const inputValue = useSelector((state) => state.header.inputValue);
   const toggleSearch = useSelector((state) => state.header.toggleSearch);
   const openHomeMenu = useSelector((state) => state.sideBar.openHomeMenu);
-
-
 
   const homeMenuNav = () => {
     dispatch(home_MenuNav());
@@ -39,10 +52,7 @@ const Header = () => {
   const onClickToggleMenuAutoReg = () => {
     dispatch(onClick_ToggleMenuAutoReg());
   };
- 
- 
- 
- 
+
   // непонятки с тем что эта функция не может следить за переменно toggleSearch, она не видит его значения
   const valueInputHeader = (e) => {
     if (toggleSearch === true) {

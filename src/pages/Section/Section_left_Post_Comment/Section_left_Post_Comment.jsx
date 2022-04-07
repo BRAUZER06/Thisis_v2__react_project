@@ -5,19 +5,12 @@ import s from "./Section_left_Post_Comment.module.scss";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
-
 const PostComment = () => {
-
-
   const { id } = useParams();
   const [textareaValue, setTextAreatValue] = React.useState("");
   const [getCommentAllAxios, setGetCommentAllAxios] = React.useState([]);
   const [getPostChecked, setGetPostChecked] = React.useState({});
   const [noImges, setNoImages] = React.useState(false);
-
-
-
 
   React.useEffect(async () => {
     try {
@@ -31,9 +24,6 @@ const PostComment = () => {
     }
   }, []);
 
-
-
-  
   React.useEffect(async () => {
     try {
       const resp = await axios
@@ -42,11 +32,8 @@ const PostComment = () => {
     } catch (error) {
       alert("Не удалось получить пост");
     }
-     noImg();
+    noImg();
   }, [id]);
-
-
-
 
   const onClickButtonInputForm = async () => {
     window.location.reload();
@@ -64,11 +51,6 @@ const PostComment = () => {
     );
   };
 
-
-
-
-
-
   const noImg = () => {
     if (getPostChecked.photoUrl.indexOf("http") === 0) {
       setNoImages(false);
@@ -77,16 +59,9 @@ const PostComment = () => {
     }
   };
 
-
-
-
   const onChangeValueInput = (e) => {
     setTextAreatValue(e.target.value);
   };
-
-
-
-
 
   return (
     <div className={s.container}>
