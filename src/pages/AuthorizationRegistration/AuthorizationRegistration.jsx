@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import Auto from "./Auto.jsx";
 import Regist from "./Regist.jsx";
 import { useNavigate } from "react-router-dom";

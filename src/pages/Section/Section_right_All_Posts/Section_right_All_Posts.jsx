@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
 import { instance } from "../../../config/axios";

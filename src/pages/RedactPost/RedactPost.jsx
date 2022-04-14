@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import "easymde/dist/easymde.min.css";
 import s from "./RedactPost.module.scss";
 import { instance } from "../../config/axios";

@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import { instance } from "../../../config/axios";
 import s from "./Section_left_Post_Comment.module.scss";

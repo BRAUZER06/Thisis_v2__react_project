@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import s from "./Profilse.module.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
