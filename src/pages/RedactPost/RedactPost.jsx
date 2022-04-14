@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "easymde/dist/easymde.min.css";
 import s from "./RedactPost.module.scss";
+import { instance } from "../../config/axios";
 import { SimpleMdeReact } from "react-simplemde-editor";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -22,24 +23,23 @@ const RedactPost = () => {
     }
   };
 
-  React.useEffect(async () => {
-    try {
-      const res = await axios
-        .get(`http://localhost:5656/posts/${id}`)
-        .then((respos) => setInputValue(respos.data));
-    } catch (error) {
-      alert("Ошибка при получении данных ");
-    }
-  }, []);
+  React.useEffect(
+    (async () => {
+      try {
+        const res = await instance
+          .get(`/posts/${id}`)
+          .then((respos) => setInputValue(respos.data));
+      } catch (error) {
+        alert("Ошибка при получении данных ");
+      }
+    })(),
+    []
+  );
 
   const clickPostDeleted = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.delete(`http://localhost:5656/posts/${id}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      });
+      const res = await instance.delete(`/posts/${id}`);
       navigation("/home");
     } catch (error) {
       if (prompt("Временные проблемы, перенаправить на главную страницу ?")) {
@@ -52,20 +52,12 @@ const RedactPost = () => {
   const clickFormButton = async (e) => {
     e.preventDefault();
     try {
-      const resp = await axios.patch(
-        `http://localhost:5656/posts/${id}`,
-        {
-          title: valueInput.title,
-          description: valueInput.description,
-          photoUrl: valueInput.photoUrl,
-          text: valueInput.text,
-        },
-        {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-          },
-        }
-      );
+      const resp = await instance.patch(`/posts/${id}`, {
+        title: valueInput.title,
+        description: valueInput.description,
+        photoUrl: valueInput.photoUrl,
+        text: valueInput.text,
+      });
       navigation("/home");
     } catch (error) {
       alert("Вы ввели некорректные данные ");

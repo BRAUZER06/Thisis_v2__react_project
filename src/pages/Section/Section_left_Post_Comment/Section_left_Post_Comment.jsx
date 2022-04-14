@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { instance } from "../../../config/axios";
 import s from "./Section_left_Post_Comment.module.scss";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,43 +13,39 @@ const PostComment = () => {
   const [getPostChecked, setGetPostChecked] = React.useState({});
   const [noImges, setNoImages] = React.useState(false);
 
-  React.useEffect(async () => {
-    try {
-      const resp = await axios
-        .get("http://localhost:5656/comments")
-        .then((respons) => {
+  React.useEffect(
+    (async () => {
+      try {
+        const resp = await instance.get("/comments").then((respons) => {
           setGetCommentAllAxios(respons.data.items);
         });
-    } catch (error) {
-      alert("Не удалось получить комментарий");
-    }
-  }, []);
+      } catch (error) {
+        alert("Не удалось получить комментарий");
+      }
+    })(),
+    []
+  );
 
-  React.useEffect(async () => {
-    try {
-      const resp = await axios
-        .get(`http://localhost:5656/posts/${id}`)
-        .then((resposn) => setGetPostChecked(resposn.data));
-    } catch (error) {
-      alert("Не удалось получить пост");
-    }
-    noImg();
-  }, [id]);
+  React.useEffect(
+    (async () => {
+      try {
+        const resp = await instance
+          .get(`/posts/${id}`)
+          .then((resposn) => setGetPostChecked(resposn.data));
+      } catch (error) {
+        alert("Не удалось получить пост");
+      }
+      noImg();
+    })(),
+    [id]
+  );
 
   const onClickButtonInputForm = async () => {
     window.location.reload();
-    const res = await axios.post(
-      "http://localhost:5656/comments",
-      {
-        text: textareaValue,
-        postId: id,
-      },
-      {
-        headers: {
-          Authorization: window.localStorage.getItem("token"),
-        },
-      }
-    );
+    const res = await instance.post("/comments", {
+      text: textareaValue,
+      postId: id,
+    });
   };
 
   const noImg = () => {

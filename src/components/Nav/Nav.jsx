@@ -74,7 +74,10 @@ const Nav = () => {
                 </Link>
               </div>
               <div className={s.container_block_avatar}>
-                <img src="https://www.meme-arsenal.com/memes/5abed9f3164164ba88734fab701f2b14.jpg" />
+                <img
+                  src="https://www.meme-arsenal.com/memes/5abed9f3164164ba88734fab701f2b14.jpg"
+                  alt="'"
+                />
               </div>
               <div className={s.container_block_name}>
                 <p>{fullName}</p>

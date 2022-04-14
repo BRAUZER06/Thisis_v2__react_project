@@ -1,137 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap");
 
-
-
-.container{
- 
+.container {
   width: 620px;
   box-sizing: border-box;
-  &_Link{
+  &_Link {
     text-decoration: none;
   }
 
-
-  .content{
-    
+  .content {
     align-items: center;
     padding: 10px 30px 20px 34px;
-    border: 1px solid  #F9F9F9;
+    border: 1px solid #f9f9f9;
     display: flex;
     justify-content: space-between;
-    &:hover{
+    &:hover {
       -webkit-box-shadow: 5px 4px 8px 0px rgba(34, 60, 80, 0.2);
       -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
       box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     }
-    &_active{
+    &_active {
       -webkit-box-shadow: 2px 6px 9px 0px rgba(14, 32, 15, 0.42);
       -moz-box-shadow: 2px 6px 9px 0px rgba(14, 32, 15, 0.42);
       box-shadow: 2px 6px 9px 0px rgba(14, 32, 15, 0.42);
     }
-    &_photo{
+    &_photo {
       width: 165px;
       height: 165px;
       border-radius: 15px;
-      
     }
-   
   }
- 
 
+  &_div {
+    margin-right: 40px;
+    &_h2 {
+      max-width: 560px;
+      font-family: Nunito;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      margin-bottom: 0px;
+      color: #080b0e;
+    }
+    &_p {
+      margin-top: 5px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 23px;
+      color: #898c90;
+    }
 
-    &_div{
-     
-      margin-right: 40px;
-      &_h2{
-        max-width: 560px;
-        font-family: Nunito;
-        font-style: normal;
-        font-weight: 800;
-        font-size: 24px;
-        margin-bottom: 0px;
-        color: #080B0E;
-      }
-      &_p{
-        margin-top: 5px;
-        font-family: Inter;
+    &_sub {
+      display: flex;
+      align-items: center;
+
+      &_p {
+        margin: 2px;
+        font-family: IBM Plex Sans;
         font-style: normal;
         font-weight: normal;
-        font-size: 15px;
-        line-height: 23px;
-        color: #898C90;
-      }
-      
+        font-size: 14px;
 
-      &_sub{
-        display: flex;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+
+        color: #c1c1c1;
+      }
+      &_div {
         align-items: center;
-        
-        &_p{
-          margin: 2px;
+        display: flex;
+        margin-left: 21px;
+        &_span {
+          display: block;
+          margin-left: 5px;
           font-family: IBM Plex Sans;
           font-style: normal;
           font-weight: normal;
           font-size: 14px;
-          
+
           letter-spacing: 0.01em;
           text-transform: uppercase;
-          
-          color: #C1C1C1;
-        }
-        &_div{
-          align-items: center;
-          display: flex;
-          margin-left: 21px;
-          &_span{
-            display: block;
-            margin-left: 5px;
-            font-family: IBM Plex Sans;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-           
-            letter-spacing: 0.01em;
-            text-transform: uppercase;
-            color: #C1C1C1;
-
-          }
-        
-          
+          color: #c1c1c1;
         }
       }
     }
-    &_pagination{
-      display: flex;
-      justify-content: center;
-    }
+  }
+  &_pagination {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-
-
-
-
 //icon
-.icon_color_trash{
+.icon_color_trash {
   font-size: 1.3em;
   color: rgb(65, 63, 63);
   padding: 5px 15px;
   margin-left: 20px;
-  &:hover{
+  &:hover {
     color: red;
   }
-  
 }
-.icon_color_black{
+.icon_color_black {
   font-size: 1.1em;
   color: rgb(94, 94, 94);
 }
-.Pan_To_Square{
+.Pan_To_Square {
   display: block;
   color: rgb(94, 94, 94);
   font-size: 1.4em;
   margin-left: 4px;
-  &:hover{
+  &:hover {
     color: red;
   }
-  
 }

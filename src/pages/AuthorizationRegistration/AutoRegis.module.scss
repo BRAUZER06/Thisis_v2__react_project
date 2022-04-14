@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap");
 
-
-.container{
-  
-  border: 1px solid #C0C0C0;
+.container {
+  border: 1px solid #c0c0c0;
   box-sizing: border-box;
   width: 446px;
   background-color: white;
@@ -14,22 +12,19 @@
   z-index: 55;
   transform: translate(-50%, -50%);
   -webkit-box-shadow: 2px 1px 14px 0px rgba(27, 37, 45, 0.2);
--moz-box-shadow: 2px 1px 14px 0px rgba(27, 37, 45, 0.2);
-box-shadow: 2px 1px 14px 0px rgba(27, 37, 45, 0.2);
-
-
- 
+  -moz-box-shadow: 2px 1px 14px 0px rgba(27, 37, 45, 0.2);
+  box-shadow: 2px 1px 14px 0px rgba(27, 37, 45, 0.2);
 }
 
-.autorization{
+.autorization {
   padding: 20px 40px 30px;
-  &_div{
+  &_div {
     margin-bottom: 18px;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    
-    >h2{
+
+    > h2 {
       font-family: Inter;
       font-style: normal;
       font-weight: bold;
@@ -38,15 +33,13 @@ box-shadow: 2px 1px 14px 0px rgba(27, 37, 45, 0.2);
       letter-spacing: -0.5px;
       color: #373737;
     }
-    &_icon{
+    &_icon {
       font-size: 30px;
     }
   }
-  &_form{
-    >label{
-
-      >p{
-        
+  &_form {
+    > label {
+      > p {
         font-family: Inter;
         font-style: normal;
         font-weight: 600;
@@ -57,11 +50,9 @@ box-shadow: 2px 1px 14px 0px rgba(27, 37, 45, 0.2);
         padding: 0px 0px 2px 0px;
       }
 
-      
-      >input{
-        
+      > input {
         width: 100%;
-        border: 1px solid #EEEEEE;
+        border: 1px solid #eeeeee;
         box-sizing: border-box;
         border-radius: 12px;
         font-family: Inter;
@@ -73,16 +64,13 @@ box-shadow: 2px 1px 14px 0px rgba(27, 37, 45, 0.2);
         padding: 10px;
       }
     }
-
-    
   }
-
 }
-.input_submit{
+.input_submit {
   margin-top: 20px;
   width: 366px;
   height: 49px;
-  background: #FFDF36;
+  background: #ffdf36;
   border-radius: 12px;
   align-items: center;
   text-align: center;
@@ -92,26 +80,21 @@ box-shadow: 2px 1px 14px 0px rgba(27, 37, 45, 0.2);
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #68572D;
-  &:hover{
+  color: #68572d;
+  &:hover {
     box-shadow: 0 0 0 60px rgb(255, 208, 0) inset;
-    
   }
-  
 }
 
-.error{
+.error {
   color: red;
   font-weight: 600;
   font-size: 10px;
 }
 
-
-
 // Link react-router-dom
 
-
-.Link{
+.Link {
   text-decoration: none;
   color: black;
 }

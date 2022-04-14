@@ -1,41 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap");
 
-
-.wrapper{
-
-  transform: translate(5%,5%);
+.wrapper {
+  transform: translate(5%, 5%);
   margin: 0 auto;
 }
-.container{
+.container {
   width: 720px;
   padding: 0px 80px 10px 68px;
   margin: 0 auto;
 
-  
+  &_content {
+    p {
+      margin-bottom: 7px;
+    }
 
-  &_content{
-    p{margin-bottom: 7px;}
-
-
-
- 
-  
-
-    &_form{
+    &_form {
       display: flex;
       flex-direction: column;
-      &_p{
+      &_p {
         font-family: Inter;
-        color: #0A3465;
+        color: #0a3465;
         font-size: 2em;
         font-weight: 800;
       }
-      &_hr{
+      &_hr {
         height: 1px;
         background-color: #a1a1a1;
         border-radius: 100%;
       }
-      &_input_1{
+      &_input_1 {
         margin-bottom: 20px;
         border: initial;
         outline: none;
@@ -45,107 +38,89 @@
         font-size: 42px;
         line-height: 52px;
         color: #6b6b6b;
-        
-        &::placeholder{
-          color: #D7D7D7;
+
+        &::placeholder {
+          color: #d7d7d7;
         }
       }
 
-
-
-
-
-
-
-      &_footer{
-        >p{
+      &_footer {
+        > p {
           font-family: Inter;
           font-style: normal;
           font-weight: 600;
           font-size: 16px;
           line-height: 24px;
-          color: #0A3465;
+          color: #0a3465;
         }
-        &_div{
+        &_div {
           font-family: Inter;
           font-style: normal;
           font-weight: 500;
           font-size: 15px;
           display: flex;
-         
+
           justify-content: space-between;
-          &_btn1{
+          &_btn1 {
             line-height: 19px;
             width: 100px;
             padding: 8px 5px;
             margin-right: 2px;
-            margin-top: 2px;  
+            margin-top: 2px;
             border-radius: 10px;
             border: initial;
-            background-color: #F3F3F3;
-            color: #68572D;
+            background-color: #f3f3f3;
+            color: #68572d;
             transition: 0.5s;
             -webkit-box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.22) inset;
             -moz-box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.22) inset;
             box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.22) inset;
-            
-            &:hover{
-              
-              background-color: #F3F3F3;
-              color: #68572D;
+
+            &:hover {
+              background-color: #f3f3f3;
+              color: #68572d;
               -webkit-box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.22);
               -moz-box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.22);
               box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.22);
             }
-            &:active{
+            &:active {
               color: white;
-              background-color:rgb(255, 61, 61) ;  
+              background-color: rgb(255, 61, 61);
             }
           }
-          &_btn2{
+          &_btn2 {
             line-height: 19px;
             width: 140px;
             padding: 8px 5px;
-            background: #FFDF36;
+            background: #ffdf36;
             margin-right: 2px;
             margin-top: 2px;
             border-radius: 10px;
             border: initial;
             transition: 0.5s;
-            &:hover{
-              background-color:rgb(226, 197, 49) ;
-             
+            &:hover {
+              background-color: rgb(226, 197, 49);
+
               -webkit-box-shadow: 2px 3px 8px 0px rgba(34, 60, 80, 0.2);
               -moz-box-shadow: 2px 3px 8px 0px rgba(34, 60, 80, 0.2);
               box-shadow: 2px 3px 8px 0px rgba(34, 60, 80, 0.2);
             }
-            &:active{
-              background-color:rgb(226, 197, 49) ;
+            &:active {
+              background-color: rgb(226, 197, 49);
               -webkit-box-shadow: 2px 1px 8px 0px rgba(119, 103, 23, 0.5) inset;
               -moz-box-shadow: 2px 1px 8px 0px rgba(119, 103, 23, 0.5) inset;
               box-shadow: 2px 1px 8px 0px rgba(119, 103, 23, 0.5) inset;
             }
-           
           }
         }
-
-       
-       
       }
-      
     }
   }
 }
 
-//icon 
-.icon{
+//icon
+.icon {
   font-size: 18px;
   margin: 0px 6px 0px 0px;
-flex-direction: column;
-
-
-
-
-
-
+  flex-direction: column;
 }

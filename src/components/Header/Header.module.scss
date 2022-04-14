@@ -1,41 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
-.header{
-
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap");
+.header {
   width: 620px;
-  background-color: #F9FAFD;
+  background-color: #f9fafd;
   height: 68px;
-  
-   
 
-          &_input{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px 29px;
+  &_input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 29px;
 
-            input{
-              margin: 21px 0px;
-              background-color: #F9FAFD;
-              outline: none;
-              font-size: 1.3em;
-              border: none;
-              width: 88%;
-            }
-          }
+    input {
+      margin: 21px 0px;
+      background-color: #f9fafd;
+      outline: none;
+      font-size: 1.3em;
+      border: none;
+      width: 88%;
+    }
+  }
 
-
-  &_container{
+  &_container {
     padding: 0px 29px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 68px;
 
-    &_left{ 
+    &_left {
       cursor: pointer;
-        p{
-          color: #0A3465;
-        
+      p {
+        color: #0a3465;
+
         font-family: Inter;
         font-style: normal;
         font-weight: 800;
@@ -43,14 +39,12 @@
         line-height: 24px;
       }
     }
-   
-    &_right{
+
+    &_right {
       display: flex;
-      
-      
-      &_icon_block_right{
+
+      &_icon_block_right {
         margin-right: 3px;
-        
       }
     }
   }
@@ -58,39 +52,36 @@
 
 //icon
 
-  .icon {
-    position: relative;
-    display: inline-block;
-   padding: 3px;
-   cursor: pointer;
-  }
-  
-  .icon >span {
-    visibility: hidden;
-    width: 80px;
-    background-color: #2D2D2D;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    top: 130%;
-    left: 140%;
-    margin-left: -60px;
-  }
-  
-  .icon:hover >span {
-    visibility: visible;
-    
-  }
+.icon {
+  position: relative;
+  display: inline-block;
+  padding: 3px;
+  cursor: pointer;
+}
 
+.icon > span {
+  visibility: hidden;
+  width: 80px;
+  background-color: #2d2d2d;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
 
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 130%;
+  left: 140%;
+  margin-left: -60px;
+}
 
-  //Link react-router-dom
-  .Link{
-    text-decoration: none;
-    color: rgb(36, 36, 36);
-  }
+.icon:hover > span {
+  visibility: visible;
+}
+
+//Link react-router-dom
+.Link {
+  text-decoration: none;
+  color: rgb(36, 36, 36);
+}

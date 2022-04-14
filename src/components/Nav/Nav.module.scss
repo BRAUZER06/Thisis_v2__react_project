@@ -1,206 +1,191 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap");
 
-*{
+* {
   font-family: Nunito;
   box-sizing: border-box;
 }
-.container{
+.container {
   transition: all 0.9s;
   position: fixed;
   overflow: hidden;
-  right: 0; 
+  right: 0;
   top: 0;
   background: -webkit-linear-gradient(0deg, rgb(6, 6, 36), rgb(19, 55, 136));
   background: -moz-linear-gradient(0deg, rgb(6, 6, 36), rgb(19, 55, 136));
   background: linear-gradient(0deg, rgb(6, 6, 36), rgb(19, 55, 136));
   width: 300px;
   height: 100vh;
-  .content{
+  .content {
     // display: none !important;
     width: 280px;
     height: 99vh;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
   }
 
-    &_block{
-      height: 100%;
-      width: 100%;
-      
-      &_thisis{
-        font-weight: bold;
-        letter-spacing: 2px;
-        font-size: 3em;
-        margin: 0px;
-        padding: 0px;
-        align-items: center;
-        text-align: center;
-        cursor: pointer;
-         
+  &_block {
+    height: 100%;
+    width: 100%;
 
-          background: linear-gradient(to right, rgb(255, 255, 255),     rgb(168, 143, 255), rgb(255, 255, 255),);
-          background-size: 400% 400%;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          -webkit-animation: rainbow 3s ease infinite;
-          animation: rainbow 3s ease infinite;
-          
-         
-         
-        @-webkit-keyframes rainbow {
-          0% { background-position: 0% 50% }
-          50% { background-position: 100% 50% }
-          100% { background-position: 0% 50% }
-        }
-         
-        @keyframes rainbow {
-          0% { background-position: 0% 50% }
-          50% { background-position: 100% 50% }
-          100% { background-position: 0% 50% }
-        }
-  
-        >p{
-          margin: 40px 0px 20px;
-        }
+    &_thisis {
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 3em;
+      margin: 0px;
+      padding: 0px;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
 
+      background: linear-gradient(to right, rgb(255, 255, 255), rgb(168, 143, 255), rgb(255, 255, 255));
+      background-size: 400% 400%;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-animation: rainbow 3s ease infinite;
+      animation: rainbow 3s ease infinite;
 
+      @-webkit-keyframes rainbow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
-      &_avatar{
-        text-align: center;
-        transition: 0.9s;
+
+      @keyframes rainbow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      > p {
+        margin: 40px 0px 20px;
+      }
+    }
+    &_avatar {
+      text-align: center;
+      transition: 0.9s;
+      margin: 0px 0px 10px;
+
+      img {
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 4px solid rgb(168, 168, 168);
+      }
+      :hover {
+        border: 4px solid rgb(241, 54, 54);
+        transition: 0.3s;
+      }
+    }
+    &_name {
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: bold;
+
+      > p {
+        color: rgb(243, 243, 243);
         margin: 0px 0px 10px;
-       
-
-        img{
-          margin: 0 auto;
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          border: 4px solid rgb(168, 168, 168);
-          
-        }
-        :hover{
-          border: 4px solid rgb(241, 54, 54);
-          transition: 0.3s;
-        }
-
-
-
-
+        font-size: 20px;
       }
-      &_name{
-        text-align: center;
-        margin-bottom: 10px;
-        font-weight: bold;
 
-        >p{
-          color: rgb(243, 243, 243);
-          margin: 0px 0px 10px;
-          font-size: 20px;
-        }
-
-        &_icon{
-
-          >div{
-            color: white;
-            font-size: 1.5em;
-            margin: 10px 25px;
-             :hover{
-              color: rgb(167, 167, 167);
-            }
+      &_icon {
+        > div {
+          color: white;
+          font-size: 1.5em;
+          margin: 10px 25px;
+          :hover {
+            color: rgb(167, 167, 167);
           }
         }
-
-
-
       }
-      &_nav{
-        
-        padding: 20px;
-        padding-right: 10px;
-        color: white;;
+    }
+    &_nav {
+      padding: 20px;
+      padding-right: 10px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-radius: 5px;
+      &_text {
+        cursor: pointer;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        border-radius: 5px;
-        &_text{
-         
-          cursor: pointer;
-          display: flex;
-          justify-content: space-between;
-          padding: 4px 10px;
-          font-size: 1.3em;
-          margin: 8px 0px;
+        justify-content: space-between;
+        padding: 4px 10px;
+        font-size: 1.3em;
+        margin: 8px 0px;
 
-          :hover{
-            color: rgb(218, 218, 218);
-          }
-      
-          p{ 
-           
-            margin: 2px;
-            padding: 0px;
-          }
+        :hover {
+          color: rgb(218, 218, 218);
+        }
+
+        p {
+          margin: 2px;
+          padding: 0px;
         }
       }
-
-
-
-      &_footer{
-        
-        color: white;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-
-        &_data{
-          text-align: right;
-          
-          >p{
-             display: flex; 
-            justify-content: flex-end;
-            color: rgb(203, 206, 206);
-            margin: 0px;
-          }
-            }
-        &_icon_menu{
-          cursor: pointer;
-          font-size: 20px;
-          width: 110px;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-        }
-      }
-
     }
 
+    &_footer {
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
 
+      &_data {
+        text-align: right;
+
+        > p {
+          display: flex;
+          justify-content: flex-end;
+          color: rgb(203, 206, 206);
+          margin: 0px;
+        }
+      }
+      &_icon_menu {
+        cursor: pointer;
+        font-size: 20px;
+        width: 110px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+  }
 }
-
-
 
 //icon
 
 .icon {
   position: relative;
   display: inline-block;
- padding: 3px;
- cursor: pointer;
+  padding: 3px;
+  cursor: pointer;
 }
 
-.icon >span {
+.icon > span {
   visibility: hidden;
   font-size: 15px;
   width: 100px;
-  background-color: #2D2D2D;
+  background-color: #2d2d2d;
   color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  
+
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
@@ -209,19 +194,18 @@
   margin-left: -60px;
 }
 
-.icon:hover >span {
+.icon:hover > span {
   visibility: visible;
-  
 }
 
-@media (max-width: 1920px){
-  .container{
-    position:relative;
+@media (max-width: 1920px) {
+  .container {
+    position: relative;
   }
 }
 
 //react-router-doom
-.Link{
+.Link {
   text-decoration: none;
   color: white;
 }

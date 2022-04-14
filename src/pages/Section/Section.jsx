@@ -6,10 +6,6 @@ import Comment from "./Section_left_Post_Comment/Section_left_Post_Comment.jsx";
 import SectionLeft from "./Section_left_MyInformation/Section_left_MyInformation";
 import Section_left_Create_Post from "./Section_left_Create_Post/Section_left_Create_Post";
 
-
-
-
-
 const Section = () => {
   return (
     <section style={{ display: "flex" }}>
@@ -39,4 +35,3 @@ const Section = () => {
 };
 
 export default Section;
- 

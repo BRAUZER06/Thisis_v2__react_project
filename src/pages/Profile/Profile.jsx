@@ -3,6 +3,7 @@ import axios from "axios";
 import s from "./Profilse.module.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { instance } from "../../config/axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEye,
@@ -29,12 +30,8 @@ const Profile = () => {
   React.useEffect(() => {
     try {
       (async () => {
-        await axios
-          .get(
-            `http://localhost:5656/posts?userId=${window.localStorage.getItem(
-              "userId"
-            )}`
-          )
+        await instance
+          .get(`/posts?userId=${window.localStorage.getItem("userId")}`)
           .then((respos) => setDownloadPosts(respos.data.items));
       })();
     } catch (error) {
@@ -43,8 +40,8 @@ const Profile = () => {
 
     try {
       (async () => {
-        await axios
-          .get(`http://localhost:5656/comments`)
+        await instance
+          .get(`/comments`)
           .then((respos) => setDownloadComments(respos.data.items));
       })();
     } catch (error) {
@@ -54,21 +51,13 @@ const Profile = () => {
 
   const removeMyPostClickBtn = async (e) => {
     window.location.reload();
-    const res = await axios.delete(`http://localhost:5656/posts/${e}`, {
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    });
+    const res = await instance.delete(`/posts/${e}`);
     res();
   };
 
   const removeMyCommentClickBtn = async (e) => {
     window.location.reload();
-    const res = await axios.delete(`http://localhost:5656/comments/${e}`, {
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    });
+    const res = await instance.delete(`/comments/${e}`);
     res();
   };
 

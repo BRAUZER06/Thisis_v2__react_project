@@ -1,94 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap");
 
-.container{
+.container {
   box-sizing: border-box;
   width: 720px;
   padding: 0px 64px 10px 68px;
   transition: all 0.9s;
-  &:hover{
+  &:hover {
     border-radius: 15px;
     border-top-right-radius: 0px;
     -webkit-box-shadow: 0px 0px 24px -2px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 0px 0px 24px -2px rgba(34, 60, 80, 0.2);
     box-shadow: 0px 0px 24px -2px rgba(34, 60, 80, 0.2);
   }
-  .content{margin: 0 auto;}
+  .content {
+    margin: 0 auto;
+  }
 
+  &_block {
+    max-width: 584px;
 
-      
-        &_block{
-          max-width: 584px;
- 
-          &_name{
-            margin-bottom: 10px;
-            
-            h1{
-              font-family: Inter;
-              font-style: normal;
-              font-weight: 800;
-              font-size: 72px;
-              line-height: 10px;
-              color: #202020;
-            }
-            p{
-              margin-left: 3px;
-              font-family: Inter;
-              font-style: normal;
-              font-weight: 500;
-              font-size: 34px;
-              line-height: 10px;
-              color: #AAAAAA;
-            }
-          }
+    &_name {
+      margin-bottom: 10px;
 
-          &_photo{
-            border: 1px solid black;
-            border-radius: 10px;
-            width: 584px;
-            height: 422px;
-            &:hover{
-              transition: 0.4s;
-              -webkit-box-shadow: 0px 0px 24px -2px rgba(34, 60, 80, 0.2);
-              -moz-box-shadow: 0px 0px 24px -2px rgba(34, 60, 80, 0.2);
-              box-shadow: 0px 0px 24px -2px rgba(34, 60, 80, 0.2);
-            }
-            // img{
-            
-            // }
-          }
+      h1 {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 72px;
+        line-height: 10px;
+        color: #202020;
+      }
+      p {
+        margin-left: 3px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 10px;
+        color: #aaaaaa;
+      }
+    }
 
+    &_photo {
+      border: 1px solid black;
+      border-radius: 10px;
+      width: 584px;
+      height: 422px;
+      &:hover {
+        transition: 0.4s;
+        -webkit-box-shadow: 0px 0px 24px -2px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 0px 24px -2px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 0px 24px -2px rgba(34, 60, 80, 0.2);
+      }
+      // img{
 
-          &_about_me{
-            margin-left: 2px;
-            margin-top: 47px;
-            
+      // }
+    }
 
-            h2{
-              
-              font-family: Inter;
-              font-style: normal;
-              font-weight: bold;
-              font-size: 24px;
-              line-height: 10px;
-              color: #202020;
-            }
-            p{
-              font-family: Inter;
-              font-style: normal;
-              font-weight: normal;
-              font-size: 16px;
-              line-height: 28px;
-              color: #000000;
-            }
-          }
-        }
+    &_about_me {
+      margin-left: 2px;
+      margin-top: 47px;
 
-
-
-
-
-
+      h2 {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 10px;
+        color: #202020;
+      }
+      p {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        color: #000000;
+      }
+    }
+  }
 }
 
 //  Inter    Nunito       IBM Plex Sans
-

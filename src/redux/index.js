@@ -11,7 +11,6 @@ const rootReducer = combineReducers({
   avtoReg: avtoRegRefucer,
   sideBar: sidebarReducer,
   header: headerReducer,
- 
 });
 
 const store = createStore(

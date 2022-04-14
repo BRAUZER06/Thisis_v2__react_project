@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "easymde/dist/easymde.min.css";
 import s from "./Section_left_Create_Post.module.scss";
+import { instance } from "../../../config/axios";
 import { SimpleMdeReact } from "react-simplemde-editor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
@@ -16,20 +17,12 @@ const Section_left_Create_Post = () => {
 
   const clickFormButton = async (e) => {
     try {
-      const resp = await axios.post(
-        "http://localhost:5656/posts",
-        {
-          title: valueInput.title,
-          description: valueInput.description,
-          photoUrl: valueInput.photoUrl,
-          text: valueInput.text,
-        },
-        {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-          },
-        }
-      );
+      const resp = await instance.post("/posts", {
+        title: valueInput.title,
+        description: valueInput.description,
+        photoUrl: valueInput.photoUrl,
+        text: valueInput.text,
+      });
     } catch (error) {
       alert("Не удалось отправить данные");
     }

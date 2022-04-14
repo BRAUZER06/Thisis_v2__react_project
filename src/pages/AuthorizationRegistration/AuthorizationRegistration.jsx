@@ -3,6 +3,7 @@ import axios from "axios";
 import Auto from "./Auto.jsx";
 import Regist from "./Regist.jsx";
 import { useNavigate } from "react-router-dom";
+import { instance } from "../../config/axios.js";
 import { useDispatch, useSelector } from "react-redux";
 import { close_MenuAutoReg } from "../../redux/modal/action";
 import { reg_AutoValueInput } from "../../redux/auto_regis/action";
@@ -27,8 +28,8 @@ const AuthorizationRegistration = () => {
       console.log("мы в блоке с регистарцией");
       try {
         // сделать проверку, есть логин занят то выводить свооотсветвующубю ошибку
-        const resp = await axios
-          .post("http://localhost:5656/auth/register", {
+        const resp = await instance
+          .post("/auth/register", {
             fullName: fullName,
             email: email,
             password: password,
@@ -49,8 +50,8 @@ const AuthorizationRegistration = () => {
     } else if (e.target.name === "authorization") {
       console.log("мы в блоке с авторизацией");
       try {
-        const resp = await axios
-          .post("http://localhost:5656/auth/login", {
+        const resp = await instance
+          .post("/auth/login", {
             email: email,
             password: password,
           })

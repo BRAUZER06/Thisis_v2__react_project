@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
+import { instance } from "../../../config/axios";
 import { useParams, Link } from "react-router-dom";
 import Paginations from "./Paginations/Paginations";
 import s from "./Section_right_All_Posts.module.scss";
@@ -28,8 +29,8 @@ const SectionRight = () => {
 
   React.useEffect(() => {
     const res = async () => {
-      const resp = await axios
-        .get(`http://localhost:5656/posts?page=${paginatePages}`)
+      const resp = await instance
+        .get(`/posts?page=${paginatePages}`)
         .then((respos) => {
           setDownloadPosts(respos.data.items);
           setDownloadPostsAllNumbers(respos.data.total);
@@ -44,11 +45,7 @@ const SectionRight = () => {
 
   const removeMyPostClickBtn = async (e) => {
     window.location.reload();
-    const res = await axios.delete(`http://localhost:5656/posts/${e}`, {
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    });
+    const res = await instance.delete(`/posts/${e}`, {});
     res();
   };
 
