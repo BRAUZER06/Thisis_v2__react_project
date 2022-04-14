@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.203de27c.css",
+    "main.js": "/static/js/main.44c2e195.js",
+    "static/media/Pupkin_photo.png": "/static/media/Pupkin_photo.1c1cc1e5d93b6520f919.png",
+    "static/media/marked.cjs": "/static/media/marked.3480e83007306fe0a911.cjs",
+    "index.html": "/index.html",
+    "main.203de27c.css.map": "/static/css/main.203de27c.css.map",
+    "main.44c2e195.js.map": "/static/js/main.44c2e195.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.203de27c.css",
+    "static/js/main.44c2e195.js"
+  ]
+}
